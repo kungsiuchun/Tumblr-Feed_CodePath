@@ -1,0 +1,6 @@
+framework module Pods_Tumblr_Feed_CodePath {
+  umbrella header "Pods-Tumblr-Feed_CodePath-umbrella.h"
+
+  export *
+  module * { export * }
+}
