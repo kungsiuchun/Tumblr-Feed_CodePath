@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8wb-iM-lfk">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="QJk-Vy-Vcm">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -32,14 +32,16 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jXK-5I-bBm">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="280"/>
+                                                    <rect key="frame" x="0.0" y="11" width="375" height="243"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <rect key="contentStretch" x="0.0" y="0.0" width="1" height="0.0"/>
                                                 </imageView>
                                             </subviews>
+                                            <rect key="contentStretch" x="0.5" y="0.5" width="1" height="1"/>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="postsIamgeView" destination="jXK-5I-bBm" id="n05-76-zuA"/>
+                                            <segue destination="ppd-jL-Eja" kind="show" identifier="toPhotoDetail" id="hvH-T9-93s"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -53,12 +55,55 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Eiw-Mz-RsF"/>
                     </view>
+                    <navigationItem key="navigationItem" id="r9g-y7-bd2"/>
                     <connections>
                         <outlet property="activityIndicator" destination="U8M-Ou-jVA" id="dhJ-5n-MuF"/>
                         <outlet property="tableView" destination="6U3-Oe-LZR" id="eGN-wr-Kn3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uOc-X0-ABC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1884" y="33.733133433283363"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="ncT-Oa-WvN">
+            <objects>
+                <viewController storyboardIdentifier="DetailPhotoView" id="ppd-jL-Eja" customClass="DetailViewController" customModule="Tumblr_Feed_CodePath" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rSH-6t-1ny">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Zi-3D-oLc">
+                                <rect key="frame" x="0.0" y="64" width="375" height="242"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="O0F-qK-qnM"/>
+                    </view>
+                    <connections>
+                        <outlet property="photoView" destination="6Zi-3D-oLc" id="ACH-sA-2Ri"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bBO-fJ-9Rd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2712.8000000000002" y="33.733133433283363"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Zx0-qa-MJT">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="QJk-Vy-Vcm" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="9U1-lh-NgN">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="8wb-iM-lfk" kind="relationship" relationship="rootViewController" id="ITX-CN-m4v"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8DA-VA-2bc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="944.79999999999995" y="33.733133433283363"/>
         </scene>
